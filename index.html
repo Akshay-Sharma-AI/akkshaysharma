@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akkshay Sharma | Senior AI &amp; Data Product Manager</title>
+  <meta name="description" content="Senior AI and Data Product Manager at Microsoft with 10+ years of experience. IIM Kozhikode Alumni. Mentored 1000+ professionals in Product Management and Consulting." />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="icon-light-32x32.png" sizes="32x32" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="icon-dark-32x32.png" sizes="32x32" media="(prefers-color-scheme: dark)" />
+  <link rel="apple-touch-icon" href="apple-icon.png" />
+
+  <!-- Tailwind CSS via Play CDN (no build step required) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.474.0"></script>
+
+  <script>
+    // Tailwind theme matching the original design (navy-blue accent, formal)
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            background: '#fcfcfc',
+            foreground: '#0e1430',
+            card: '#ffffff',
+            'card-foreground': '#0e1430',
+            primary: '#1e2c63',
+            'primary-foreground': '#fcfcfc',
+            secondary: '#eef0f7',
+            'secondary-foreground': '#1c2548',
+            muted: '#e7eaf3',
+            'muted-foreground': '#5a6483',
+            accent: '#1e2c63',
+            'accent-foreground': '#fcfcfc',
+            border: '#dde1ec',
+            input: '#eef0f7',
+            ring: '#1e2c63',
+          },
+          borderRadius: {
+            DEFAULT: '0.5rem',
+          },
+          maxWidth: {
+            '6xl': '72rem',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #fcfcfc; color: #0e1430; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    /* Helper utility classes (since some tailwind opacity utilities still need defining) */
+    .bg-muted\/50 { background: #f1f3f9; }
+    .bg-primary\/10 { background: rgba(30, 44, 99, 0.10); }
+    .bg-primary\/90:hover { background: #1a2658; }
+    .border-primary\/30 { border-color: rgba(30, 44, 99, 0.30); }
+    .text-primary\/20 { color: rgba(30, 44, 99, 0.20); }
+    .bg-background\/95 { background: rgba(252, 252, 252, 0.95); }
+    .ring-background { box-shadow: 0 0 0 4px #fcfcfc; }
+    .backdrop-blur-sm { backdrop-filter: blur(6px); }
+    /* Form result toasts */
+    .form-msg.success { color: #14532d; background: #dcfce7; border: 1px solid #86efac; }
+    .form-msg.error   { color: #7f1d1d; background: #fee2e2; border: 1px solid #fca5a5; }
+    .form-msg { padding: .65rem .85rem; border-radius: .5rem; font-size: .875rem; display:none; }
+    .form-msg.show { display:block; }
+    /* Tabs */
+    .tab-btn[aria-selected="true"] { background:#fff; color:#0e1430; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+    .tab-btn { background:transparent; color:#5a6483; font-weight:500; padding:.55rem 0; border-radius:.5rem; transition: all .15s ease; }
+    .tabs-list { background:#eef0f7; padding:.25rem; border-radius:.6rem; }
+    .tab-panel[hidden] { display:none; }
+    /* Inputs */
+    .field { width:100%; padding:.65rem .85rem; border:1px solid #dde1ec; border-radius:.5rem; background:#fff; color:#0e1430; font-size:.95rem; }
+    .field:focus { outline:none; border-color:#1e2c63; box-shadow: 0 0 0 3px rgba(30,44,99,.15); }
+    .label { font-size:.85rem; font-weight:500; color:#1c2548; margin-bottom:.35rem; display:block; }
+  </style>
+</head>
+<body class="bg-background text-foreground antialiased">
+
+  <!-- =========================  NAVIGATION  ========================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-serif font-semibold text-foreground tracking-tight">Akkshay Sharma</a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#about" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">About</a></li>
+        <li><a href="#experience" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Experience</a></li>
+        <li><a href="#skills" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Skills</a></li>
+        <li><a href="#testimonials" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Testimonials</a></li>
+        <li><a href="#mentorship" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Mentorship</a></li>
+        <li><a href="#contact" class="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">Contact</a></li>
+      </ul>
+
+      <a href="https://cal.com/akkshay-sharma/15min" target="_blank" rel="noopener noreferrer"
+         class="hidden md:inline-flex px-5 py-2.5 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
+        Book a Session
+      </a>
+
+      <button id="menuToggle" class="md:hidden text-foreground" aria-label="Toggle menu">
+        <i data-lucide="menu" id="menuIconOpen"></i>
+        <i data-lucide="x"    id="menuIconClose" class="hidden"></i>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="md:hidden bg-background border-b border-border hidden">
+      <ul class="px-6 py-4 space-y-4">
+        <li><a href="#about"        class="block text-muted-foreground hover:text-primary transition-colors font-medium">About</a></li>
+        <li><a href="#experience"   class="block text-muted-foreground hover:text-primary transition-colors font-medium">Experience</a></li>
+        <li><a href="#skills"       class="block text-muted-foreground hover:text-primary transition-colors font-medium">Skills</a></li>
+        <li><a href="#testimonials" class="block text-muted-foreground hover:text-primary transition-colors font-medium">Testimonials</a></li>
+        <li><a href="#mentorship"   class="block text-muted-foreground hover:text-primary transition-colors font-medium">Mentorship</a></li>
+        <li><a href="#contact"      class="block text-muted-foreground hover:text-primary transition-colors font-medium">Contact</a></li>
+        <li>
+          <a href="https://cal.com/akkshay-sharma/15min" target="_blank" rel="noopener noreferrer"
+             class="inline-flex px-5 py-2.5 bg-primary text-primary-foreground rounded-md text-sm font-medium">
+            Book a Session
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================  HERO  ========================= -->
+  <section class="min-h-screen flex items-center pt-24 pb-12 px-6 bg-background">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <p class="text-primary font-medium tracking-widest uppercase text-xs">Senior AI &amp; Data Product Manager</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-tight">Akkshay Sharma</h1>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-lg">
+              Building AI-powered products at <span class="text-foreground font-semibold">Microsoft</span>.
+              Transforming careers through mentorship with <span class="text-primary font-semibold">10+ years</span> of industry experience.
+            </p>
+          </div>
+
+          <p class="text-muted-foreground leading-relaxed max-w-lg">
+            I am committed to being your mentor until you achieve your dream job. Mentored 1000+ professionals and helped 100+ transition to Product and Consulting domains.
+          </p>
+
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="https://cal.com/akkshay-sharma/15min" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
+              Start Your Journey
+              <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
+            </a>
+            <div class="flex items-center gap-3">
+              <a href="https://www.linkedin.com/in/akkshaysharma/" target="_blank" rel="noopener noreferrer"
+                 class="p-3 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="mailto:connect@akkshaysharma.com"
+                 class="p-3 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors" aria-label="Email">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-border">
+            <p class="text-xs text-muted-foreground uppercase tracking-widest mb-4">Trusted by professionals from</p>
+            <div class="flex flex-wrap items-center gap-6">
+              <span class="text-sm font-semibold text-muted-foreground">Microsoft</span>
+              <span class="text-sm font-semibold text-muted-foreground">EY</span>
+              <span class="text-sm font-semibold text-muted-foreground">L&amp;T</span>
+              <span class="text-sm font-semibold text-muted-foreground">Bosch</span>
+              <span class="text-sm font-semibold text-muted-foreground">ADP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative aspect-[3/4] max-w-md mx-auto lg:max-w-none">
+            <div class="relative bg-muted rounded-lg overflow-hidden border border-border shadow-lg h-full">
+              <img src="images/akkshay-sharma.png" alt="Akkshay Sharma - Senior AI &amp; Data Product Manager at Microsoft"
+                   class="w-full h-full object-cover object-top" />
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 lg:bottom-8 lg:-left-8 bg-card border border-border rounded-lg p-4 shadow-lg">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
+                <span class="text-primary font-bold text-sm">IIM</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">IIM Kozhikode</p>
+                <p class="text-xs text-muted-foreground">MBA Alumni</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  STATS  ========================= -->
+  <section class="py-16 px-6 bg-muted/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Stat -->
+        <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="users" class="text-primary w-6 h-6"></i>
+          </div>
+          <p class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-1">130+</p>
+          <p class="text-sm font-semibold text-foreground mb-1">Mentees</p>
+          <p class="text-xs text-muted-foreground">Professionals guided</p>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="clock" class="text-primary w-6 h-6"></i>
+          </div>
+          <p class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-1">21,000+</p>
+          <p class="text-sm font-semibold text-foreground mb-1">Minutes</p>
+          <p class="text-xs text-muted-foreground">Of mentoring time</p>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="star" class="text-primary w-6 h-6"></i>
+          </div>
+          <p class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-1">5.0</p>
+          <p class="text-sm font-semibold text-foreground mb-1">Rating</p>
+          <p class="text-xs text-muted-foreground">From 29 reviews</p>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="award" class="text-primary w-6 h-6"></i>
+          </div>
+          <p class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-1">10+</p>
+          <p class="text-sm font-semibold text-foreground mb-1">Years</p>
+          <p class="text-xs text-muted-foreground">Industry experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  ABOUT  ========================= -->
+  <section id="about" class="py-20 px-6 bg-background">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div>
+          <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">About</p>
+          <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-4">Who I Am</h2>
+          <div class="h-1 w-16 bg-primary"></div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-6">
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            I'm a Senior AI and Data Product Manager at <span class="text-foreground font-semibold">Microsoft</span>,
+            with previous experience at <span class="text-foreground font-semibold">EY</span>,
+            <span class="text-foreground font-semibold">Larsen &amp; Toubro</span>, and
+            <span class="text-foreground font-semibold">Bosch</span>. I hold an MBA from
+            <span class="text-foreground font-semibold">IIM Kozhikode</span> and have built my career at the intersection of technology, strategy, and product development.
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
+            With over 20,000 followers on professional networks and experience as a Course Creator at Unstop, I am passionate about sharing knowledge and helping others achieve their career goals. My approach combines structured planning, mock interviews, and personalized resources tailored to top companies.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-6 pt-6">
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-md bg-muted"><i data-lucide="map-pin" class="text-primary w-5 h-5"></i></div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">Location</p>
+                <p class="text-sm text-muted-foreground">Telangana, India</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-md bg-muted"><i data-lucide="languages" class="text-primary w-5 h-5"></i></div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">Languages</p>
+                <p class="text-sm text-muted-foreground">English, Hindi, Telugu</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-md bg-muted"><i data-lucide="target" class="text-primary w-5 h-5"></i></div>
+              <div>
+                <p class="text-sm font-semibold text-foreground">Focus</p>
+                <p class="text-sm text-muted-foreground">AI/ML, Data Products</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  EXPERIENCE  ========================= -->
+  <section id="experience" class="py-20 px-6 bg-muted/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Career Journey</p>
+        <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground">Experience</h2>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-border transform lg:-translate-x-1/2"></div>
+
+        <div class="space-y-12">
+          <!-- 1 -->
+          <div class="relative flex flex-col lg:flex-row gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pr-12 pl-8 lg:pl-0">
+              <div class="bg-card border border-primary/30 rounded-lg p-6 hover:shadow-md transition-shadow">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded mb-3">Current</span>
+                <h3 class="text-xl font-semibold text-foreground mb-1">Senior AI &amp; Data Product Manager</h3>
+                <p class="text-primary font-semibold mb-2">Avalara</p>
+                <p class="text-sm text-muted-foreground mb-3">Mar 2025 — Present</p>
+                <p class="text-muted-foreground text-sm">Leading AI-first product strategy for Managed Compliance Platform, embedding real-time fraud detection and compliance tracking for global enterprises.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+
+          <!-- 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pl-12 pl-8 lg:pr-0">
+              <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-foreground mb-1">AI Platform Product Manager</h3>
+                <p class="text-primary font-semibold mb-2">NSL (Brane AI) Enterprises</p>
+                <p class="text-sm text-muted-foreground mb-3">May 2023 — Mar 2025</p>
+                <p class="text-muted-foreground text-sm">Led development of AI-powered B2B SaaS platform for financial risk management, achieving 30% increase in customer adoption.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+
+          <!-- 3 -->
+          <div class="relative flex flex-col lg:flex-row gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pr-12 pl-8 lg:pl-0">
+              <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-foreground mb-1">Data and AI Product Manager</h3>
+                <p class="text-primary font-semibold mb-2">Microsoft</p>
+                <p class="text-sm text-muted-foreground mb-3">Feb 2022 — Apr 2023</p>
+                <p class="text-muted-foreground text-sm">Owned end-to-end development of Azure Cloud Migration Tool, delivering 25% improvement in forecast accuracy and 20% reduction in decision-making time.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+
+          <!-- 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pl-12 pl-8 lg:pr-0">
+              <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-foreground mb-1">Product Manager</h3>
+                <p class="text-primary font-semibold mb-2">Ernst &amp; Young (EY)</p>
+                <p class="text-sm text-muted-foreground mb-3">Mar 2021 — Feb 2022</p>
+                <p class="text-muted-foreground text-sm">Built 0-to-1 AI-powered B2C product for digital banking, increasing market penetration by 15% and customer satisfaction by 35%.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+
+          <!-- 5 -->
+          <div class="relative flex flex-col lg:flex-row gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pr-12 pl-8 lg:pl-0">
+              <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-foreground mb-1">Associate Product Manager</h3>
+                <p class="text-primary font-semibold mb-2">Larsen &amp; Toubro (L&amp;T)</p>
+                <p class="text-sm text-muted-foreground mb-3">May 2019 — Mar 2021</p>
+                <p class="text-muted-foreground text-sm">Led smart city initiative with IoT-based solutions, securing contracts worth $5M through strategic business development.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+
+          <!-- 6 -->
+          <div class="relative flex flex-col lg:flex-row-reverse gap-8">
+            <div class="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary transform lg:-translate-x-1/2 -translate-x-1/2 top-8 lg:top-6 z-10 ring-background"></div>
+            <div class="lg:w-1/2 lg:pl-12 pl-8 lg:pr-0">
+              <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-foreground mb-1">Product Analyst</h3>
+                <p class="text-primary font-semibold mb-2">ADP Pvt. Ltd.</p>
+                <p class="text-sm text-muted-foreground mb-3">Mar 2015 — Jun 2017</p>
+                <p class="text-muted-foreground text-sm">Spearheaded Tax Credits Services product, improving data processing speed by 50% and reducing report generation time by 60%.</p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-1/2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Academic Background</p>
+          <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground">Education</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-foreground mb-1">AI &amp; Business Strategies</h3>
+            <p class="text-primary font-medium mb-2">UC Berkeley</p>
+            <p class="text-sm text-muted-foreground">2022</p>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-foreground mb-1">MBA</h3>
+            <p class="text-primary font-medium mb-2">IIM Kozhikode</p>
+            <p class="text-sm text-muted-foreground">2017 — 2019</p>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-foreground mb-1">B.Tech</h3>
+            <p class="text-primary font-medium mb-2">JNTU</p>
+            <p class="text-sm text-muted-foreground">2010 — 2014</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  SKILLS  ========================= -->
+  <section id="skills" class="py-20 px-6 bg-background">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Expertise</p>
+        <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground">Skills &amp; Tools</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-card border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-foreground mb-6">Technical Skills</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Agile</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Product Development</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Strategic Thinking</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Market Research</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Analytics</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">User Design</span>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-foreground mb-6">Leadership &amp; Communication</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Teamwork</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Competitive Analysis</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Google Analytics</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Risk Management</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Stakeholder Management</span>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-foreground mb-6">Tools &amp; Certifications</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">JIRA</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Confluence</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Trello</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Asana</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">Notion</span>
+            <span class="px-3 py-1.5 bg-muted text-muted-foreground text-sm rounded-md font-medium">PSPO Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  TESTIMONIALS  ========================= -->
+  <section id="testimonials" class="py-20 px-6 bg-muted/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Testimonials</p>
+        <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-4">What Mentees Say</h2>
+        <div class="flex items-center justify-center gap-2 text-muted-foreground">
+          <div class="flex">
+            <i data-lucide="star" class="text-primary w-5 h-5" style="fill: currentColor"></i>
+            <i data-lucide="star" class="text-primary w-5 h-5" style="fill: currentColor"></i>
+            <i data-lucide="star" class="text-primary w-5 h-5" style="fill: currentColor"></i>
+            <i data-lucide="star" class="text-primary w-5 h-5" style="fill: currentColor"></i>
+            <i data-lucide="star" class="text-primary w-5 h-5" style="fill: currentColor"></i>
+          </div>
+          <span class="text-foreground font-semibold">5.0</span>
+          <span>from 29 reviews</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+          <i data-lucide="quote" class="text-primary/20 mb-4 w-8 h-8"></i>
+          <p class="text-muted-foreground leading-relaxed mb-6 italic">"It was a very insightful session and I came to know what is important for the interview. Thanks for the resources. The friendly nature of Akshay was great."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"><span class="text-primary font-semibold text-sm">A</span></div>
+              <span class="font-semibold text-foreground">Anurag</span>
+            </div>
+            <span class="text-sm text-muted-foreground">1 year ago</span>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+          <i data-lucide="quote" class="text-primary/20 mb-4 w-8 h-8"></i>
+          <p class="text-muted-foreground leading-relaxed mb-6 italic">"He listens about our background and experience and suggests what are the things it takes to reach there. He has a structured plan for people interested to learn based on their knowledge levels."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"><span class="text-primary font-semibold text-sm">P</span></div>
+              <span class="font-semibold text-foreground">Prabhakaran</span>
+            </div>
+            <span class="text-sm text-muted-foreground">1 year ago</span>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+          <i data-lucide="quote" class="text-primary/20 mb-4 w-8 h-8"></i>
+          <p class="text-muted-foreground leading-relaxed mb-6 italic">"Akshay explained everything in a very clear and planned manner. He addressed all my doubts and concerns. I would highly recommend others to get his mentorship."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"><span class="text-primary font-semibold text-sm">S</span></div>
+              <span class="font-semibold text-foreground">Sheetal Choudhary</span>
+            </div>
+            <span class="text-sm text-muted-foreground">1 year ago</span>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+          <i data-lucide="quote" class="text-primary/20 mb-4 w-8 h-8"></i>
+          <p class="text-muted-foreground leading-relaxed mb-6 italic">"Akshay was crystal clear with approach, identified right goals that are progressive and that would set stage for long-term value add. Looking forward to working with Akshay as mentor."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"><span class="text-primary font-semibold text-sm">K</span></div>
+              <span class="font-semibold text-foreground">K Akhil</span>
+            </div>
+            <span class="text-sm text-muted-foreground">2 years ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  MENTORSHIP  ========================= -->
+  <section id="mentorship" class="py-20 px-6 bg-background">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Mentorship Program</p>
+        <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-4">Your Path to Success</h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">A structured, personalized approach to help you achieve your dream job in Product Management, Business Analysis, or Consulting.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="bg-card border border-border rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-foreground mb-6">What You Get</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">Personalized weekly plans tailored to your goals</span></li>
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">Mock interviews with feedback from industry experts</span></li>
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">Resources and materials from top companies</span></li>
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">1:1 sessions for doubt clearing</span></li>
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">Resume and profile optimization</span></li>
+            <li class="flex items-start gap-3"><div class="p-1 rounded-full bg-primary/10 mt-0.5"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i></div><span class="text-muted-foreground">Long-term mentorship until you succeed</span></li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="text-xl font-semibold text-foreground">Who Can Join</h3>
+          <div class="space-y-4">
+            <div class="bg-card border border-border rounded-lg p-5 flex items-start gap-4 hover:shadow-md transition-shadow">
+              <div class="p-3 rounded-md bg-muted"><i data-lucide="rocket" class="text-primary w-6 h-6"></i></div>
+              <div>
+                <h4 class="font-semibold text-foreground">Working Professionals</h4>
+                <p class="text-sm text-muted-foreground">Looking to transition to Product Management</p>
+              </div>
+            </div>
+            <div class="bg-card border border-border rounded-lg p-5 flex items-start gap-4 hover:shadow-md transition-shadow">
+              <div class="p-3 rounded-md bg-muted"><i data-lucide="graduation-cap" class="text-primary w-6 h-6"></i></div>
+              <div>
+                <h4 class="font-semibold text-foreground">Freshers</h4>
+                <p class="text-sm text-muted-foreground">Aspiring to start a career in PM</p>
+              </div>
+            </div>
+            <div class="bg-card border border-border rounded-lg p-5 flex items-start gap-4 hover:shadow-md transition-shadow">
+              <div class="p-3 rounded-md bg-muted"><i data-lucide="briefcase" class="text-primary w-6 h-6"></i></div>
+              <div>
+                <h4 class="font-semibold text-foreground">Business Analysts</h4>
+                <p class="text-sm text-muted-foreground">Wanting to move to product roles</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  CONTACT  ========================= -->
+  <section id="contact" class="py-20 px-6 bg-muted/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-primary font-medium tracking-widest uppercase text-xs mb-2">Get Started</p>
+        <h2 class="text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-4">Ready to Transform Your Career?</h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">Book a free trial session to discuss your goals and create a personalized plan for your success.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mb-12">
+        <div class="tabs-list grid grid-cols-3 mb-6 text-sm" role="tablist">
+          <button class="tab-btn" role="tab" aria-selected="true"  data-tab="booking">Book Session</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="contact">Send Message</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="newsletter">Stay Updated</button>
+        </div>
+
+        <!-- Booking panel -->
+        <div class="tab-panel bg-card border border-border rounded-lg p-6" data-panel="booking">
+          <h3 class="text-lg font-semibold text-foreground mb-2">Request a Free Trial Session</h3>
+          <p class="text-muted-foreground text-sm mb-4">Tell me a bit about yourself and I'll get back to you to schedule a free 15-minute call.</p>
+          <form class="ajax-form grid gap-4 sm:grid-cols-2" data-kind="booking" action="submit.php" method="POST" novalidate>
+            <input type="hidden" name="form_type" value="booking" />
+            <div><label class="label">Full name *</label><input class="field" name="name" required /></div>
+            <div><label class="label">Email *</label><input class="field" type="email" name="email" required /></div>
+            <div><label class="label">Phone</label><input class="field" name="phone" /></div>
+            <div>
+              <label class="label">Experience level</label>
+              <select class="field" name="experience_level">
+                <option value="">Select…</option>
+                <option>0 — 2 years</option>
+                <option>2 — 5 years</option>
+                <option>5 — 10 years</option>
+                <option>10+ years</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="label">What are you interested in?</label>
+              <select class="field" name="interest">
+                <option value="">Select…</option>
+                <option>Product Management</option>
+                <option>Business Analysis</option>
+                <option>Consulting</option>
+                <option>AI / Data Products</option>
+                <option>Career transition</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="label">Anything specific you'd like to discuss?</label>
+              <textarea class="field" rows="4" name="message"></textarea>
+            </div>
+            <div class="sm:col-span-2 flex items-center gap-3">
+              <button class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors" type="submit">
+                Request Session <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <p class="form-msg" role="status"></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact panel -->
+        <div class="tab-panel bg-card border border-border rounded-lg p-6" data-panel="contact" hidden>
+          <h3 class="text-lg font-semibold text-foreground mb-2">Send Me a Message</h3>
+          <p class="text-muted-foreground text-sm mb-4">Have a question? Drop me a note and I'll reply by email.</p>
+          <form class="ajax-form grid gap-4 sm:grid-cols-2" data-kind="contact" action="submit.php" method="POST" novalidate>
+            <input type="hidden" name="form_type" value="contact" />
+            <div><label class="label">Full name *</label><input class="field" name="name" required /></div>
+            <div><label class="label">Email *</label><input class="field" type="email" name="email" required /></div>
+            <div class="sm:col-span-2"><label class="label">Phone</label><input class="field" name="phone" /></div>
+            <div class="sm:col-span-2"><label class="label">Message *</label><textarea class="field" rows="5" name="message" required></textarea></div>
+            <div class="sm:col-span-2 flex items-center gap-3">
+              <button class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors" type="submit">
+                Send Message <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+              <p class="form-msg" role="status"></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Newsletter panel -->
+        <div class="tab-panel bg-card border border-border rounded-lg p-6" data-panel="newsletter" hidden>
+          <h3 class="text-lg font-semibold text-foreground mb-2">Subscribe to My Newsletter</h3>
+          <p class="text-muted-foreground text-sm mb-4">Get insights on product management, AI/ML, career growth, and exclusive mentorship tips delivered to your inbox.</p>
+          <form class="ajax-form grid gap-4 sm:grid-cols-2" data-kind="newsletter" action="submit.php" method="POST" novalidate>
+            <input type="hidden" name="form_type" value="newsletter" />
+            <div><label class="label">Name</label><input class="field" name="name" /></div>
+            <div><label class="label">Email *</label><input class="field" type="email" name="email" required /></div>
+            <div class="sm:col-span-2 flex items-center gap-3">
+              <button class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors" type="submit">
+                Subscribe <i data-lucide="mail" class="w-4 h-4"></i>
+              </button>
+              <p class="form-msg" role="status"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="text-center mb-12">
+        <p class="text-sm text-muted-foreground mb-4">Prefer to book directly?</p>
+        <a href="https://cal.com/akkshay-sharma/15min" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
+          <i data-lucide="calendar" class="w-[18px] h-[18px]"></i>
+          Book Free 15-min Trial on Cal.com
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="bg-card border border-border rounded-lg p-8">
+        <h3 class="text-lg font-semibold text-foreground mb-6 text-center">The Mentorship Promise</h3>
+        <div class="grid sm:grid-cols-3 gap-6 text-sm">
+          <div class="text-center"><p class="text-primary font-semibold mb-1">Vetted &amp; Verified</p><p class="text-muted-foreground">Exclusive mentor with proven track record</p></div>
+          <div class="text-center"><p class="text-primary font-semibold mb-1">Money Back</p><p class="text-muted-foreground">100% refund in 7 days if not satisfied</p></div>
+          <div class="text-center"><p class="text-primary font-semibold mb-1">Flexibility</p><p class="text-muted-foreground">Change mentors at zero additional cost</p></div>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-muted-foreground">&copy; <span id="year"></span> Akkshay Sharma. All rights reserved.</p>
+          <div class="flex items-center gap-4">
+            <a href="https://www.linkedin.com/in/akkshaysharma/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:connect@akkshaysharma.com" class="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors" aria-label="Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================  SCRIPTS  ========================= -->
+  <script>
+    // Render lucide icons
+    lucide.createIcons();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen   = document.getElementById('menuIconOpen');
+    const iconClose  = document.getElementById('menuIconClose');
+    menuToggle.addEventListener('click', () => {
+      const hidden = mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden', !hidden);
+      iconClose.classList.toggle('hidden', hidden);
+    });
+    // Close mobile menu when a link is tapped
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }));
+
+    // Tabs
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+      panels.forEach(p => p.hidden = (p.dataset.panel !== tab.dataset.tab));
+    }));
+
+    // Forms — submit via fetch to submit.php (PHP backend below)
+    document.querySelectorAll('.ajax-form').forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg  = form.querySelector('.form-msg');
+        msg.className = 'form-msg show';
+        msg.textContent = 'Sending…';
+        const btn = form.querySelector('button[type=submit]');
+        btn.disabled = true;
+
+        try {
+          const data = new FormData(form);
+          const res  = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          const json = await res.json().catch(() => ({ success: res.ok }));
+          if (json.success) {
+            msg.classList.add('success');
+            msg.textContent = json.message || 'Thanks! I\'ll be in touch shortly.';
+            form.reset();
+          } else {
+            msg.classList.add('error');
+            msg.textContent = json.error || 'Something went wrong. Please try again.';
+          }
+        } catch (err) {
+          msg.classList.add('error');
+          msg.textContent = 'Network error. Please try again.';
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
